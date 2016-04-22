@@ -10,4 +10,3 @@ var app = {
 app.init();
 
 
-//C:\xampp\htdocs\oreilly-fed\marsbq\src\scripts\modules
