@@ -17,12 +17,6 @@ var model = module.exports = {
     getData: function () {
         request.get('menu.json', function (err, res) {
             model.menu = JSON.parse(res.text).menuItems;
-            console.log(model.menu);
         });
-        //request.get('menu.json')
-        //    .end(function (err, res) {
-        //        model.menu = JSON.parse(res.text).menuItems;
-        //        console.log(model.menu);
-        //    });
     }
 };
