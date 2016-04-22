@@ -5,7 +5,7 @@ var model = module.exports = {
         model.getData();
     },
     currentDate: new Date(),
-    eventDate: new Date(2056, 10, 05),
+    eventDate: new Date(2056, 10, 05),  
 
     menuItem: {
         title: null,
