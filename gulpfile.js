@@ -6,6 +6,7 @@ var uglyfly = require('gulp-uglyfly');
 var imagemin = require('gulp-imagemin');
 var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
+var sass = require('gulp-sass');
 
 var menu = require('./menu.json');
 
@@ -35,9 +36,11 @@ gulp.task('images', () => {
 
 
 gulp.task('styles', function() {
-	return gulp.src('src/styles/*.css')
+	return gulp.src('src/styles/main.scss')
+
 	.pipe(sourcemaps.init())
-	.pipe(cleanCSS({compatibility: 'ie8'}))
+	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+	// .pipe(cleanCSS({compatibility: 'ie8'}))
 	.pipe(sourcemaps.write('../maps'))
 	.pipe(gulp.dest('dist/styles'))
 	.pipe(browserSync.stream());
@@ -60,7 +63,7 @@ gulp.task('default',['styles','images', 'scripts','templates' ], function(){
 		}
 	});
 	// gulp.watch("src/**/*").on('change', browserSync.reload);
-	gulp.watch("src/styles/**/*.css", ['styles']);
+	gulp.watch("src/styles/**/*.scss", ['styles']);
 	gulp.watch("src/img/**/*", ['images']);
 	gulp.watch("src/scripts/**/*.js", ['scripts']);
 	gulp.watch("src/templates/**/*.hbs", ['templates']);

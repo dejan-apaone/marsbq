@@ -5,7 +5,7 @@
 
 /* set the default color, font-size, and line height */
 html {
-  color: #333;
+  color: green;
   font-size: 1em;
   line-height: 1.4;
 }
@@ -21,7 +21,11 @@ object {
     place your custom styles below here
 ========================================== */
 
-
+header{
+  h1{
+    color:orange;
+  }
+}
 
 
 
