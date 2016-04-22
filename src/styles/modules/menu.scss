@@ -2,3 +2,40 @@
 .menu-container{
 	background: $dark-bg;
 }
+.menu-list{
+	li{
+		background-color: $red;
+		padding: 3px;
+		margin: 10px 1%;
+	}
+}
+.menu-item{
+	display: block;
+	float: left;
+	padding: .5em 0;
+	font-weight: bold;
+	color:$light-bg;
+	width: 80%;
+}
+.menu-count{
+	display: inline-block;
+	width: 20%;
+	background-color: $light-bg;
+	color:$red;
+	padding: .5em 0;
+	font-weight: bold;
+
+}
+@media screen and (min-width: 620px) {
+	.menu-list{
+		margin: 0 auto;
+		display: flex;
+		flex-wrap:wrap;
+		li{
+			width: 31%;
+
+
+
+		}
+	}
+}
