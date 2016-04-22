@@ -7,11 +7,18 @@ var imagemin = require('gulp-imagemin');
 var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
 
-
+var menu = require('./menu.json');
 
 gulp.task('templates', () => {
-	return gulp.src('src/templates/**/*.hbs')
-	.pipe(handlebars())
+	var data = {
+		year: new Date().getFullYear(),
+		menu: menu.menuItems
+	},
+	options = {
+		batch : ['./src/templates/partials']
+	}
+	return gulp.src(['src/templates/**/*.hbs', '!src/templates/partials/**/*.hbs'])
+	.pipe(handlebars(data, options))
 	.pipe(rename(function(path){
 		path.extname = ".html"
 	}))
