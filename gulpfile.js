@@ -12,8 +12,11 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var jshint = require('gulp-jshint');
+var mocha = require('gulp-mocha');
+
 
 var menu = require('./menu.json');
+
 
 gulp.task('templates', function () {
     var data = {
@@ -58,6 +61,14 @@ gulp.task('lint', function () {
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
+
+
+gulp.task('test', function () {
+    gulp.src('test/*.js')
+        .pipe(mocha());
+});
+
+
 gulp.task('scripts', function () {
     var b = browserify({
         entries: 'src/scripts/main.js',
