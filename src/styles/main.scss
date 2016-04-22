@@ -1,23 +1,19 @@
 @import "../../node_modules/normalize.css/normalize.css";
+@import "./modules/colors-variables.scss";
 @import "./modules/base.scss";
 @import "./modules/helper.scss";
+@import "./modules/header.scss";
+@import "./modules/countdown.scss";
+@import "./modules/menu.scss";
+@import "./modules/footer.scss";
 
 
-/* =======================================
-    author styles
-    place your custom styles below here
-========================================== */
 
-header{
-  h1{
-    color:orange;
-  }
-}
 
-.wrapp{
-  max-width: 1100px;
-  margin: 0 auto;
-}
+
+
+
+
 
 
 
