@@ -7,6 +7,7 @@ var imagemin = require('gulp-imagemin');
 var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
 var menu = require('./menu.json');
 
@@ -40,6 +41,7 @@ gulp.task('styles', function() {
 
 	.pipe(sourcemaps.init())
 	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+	.pipe(autoprefixer())
 	// .pipe(cleanCSS({compatibility: 'ie8'}))
 	.pipe(sourcemaps.write('../maps'))
 	.pipe(gulp.dest('dist/styles'))
