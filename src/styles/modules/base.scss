@@ -19,3 +19,6 @@ object {
   max-width: 1100px;
   margin: 0 auto;
 }
+.section-list,.section-heding{
+@include reset();
+}

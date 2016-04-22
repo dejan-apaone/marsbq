@@ -1,7 +1,11 @@
 @import "../../node_modules/normalize.css/normalize.css";
+
 @import "./modules/colors-variables.scss";
+@import "./modules/mixins.scss";
+
 @import "./modules/base.scss";
 @import "./modules/helper.scss";
+
 @import "./modules/header.scss";
 @import "./modules/countdown.scss";
 @import "./modules/menu.scss";

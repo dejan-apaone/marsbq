@@ -1,8 +1,19 @@
 .header-container{
 	background: $yellow;
 }
-header{
-  h1{
-    color:$yellow;
-  }
+
+.btn{
+	display: block;
+	max-width: 300px;
+	margin: 0 auto;
+	background-color: $red;
+	color:$light-bg;
+	font-size: 1.6em;
+	padding: 1em;
+	text-decoration: none;
+	text-align: center;
+	@include border-radius(.3em);
+	&:hover,&:focus{
+		background-color: darken($red, 10%);
+	}
 }
