@@ -12,20 +12,24 @@ var view = module.exports = {
         var listItem = document.querySelectorAll('#menu li');
 
         for (var i = 0; i < listItem.length; i++) {
-            listItem[i].addEventListener('click', function () {
-                id = this.getAttribute('data-id');
-
-                // set current menu item
-                helper.setCurrent(+id);
-
-                // increment the menu item
-                helper.increment();
-
-                // update menu item in view
-                view.updateCount();
-
-            });
+            view.addListener(listItem[i]);
         }
+    },
+
+    addListener: function (listItem) {
+        listItem.addEventListener('click', function () {
+            id = this.getAttribute('data-id');
+
+            // set current menu item
+            helper.setCurrent(+id);
+
+            // increment the menu item
+            helper.increment();
+
+            // update menu item in view
+            view.updateCount();
+
+        });
     },
 
     updateCount: function () {
@@ -33,7 +37,7 @@ var view = module.exports = {
         var item = helper.getCurrent();
 
         //find the li of the current menu item
-        var li = document.querySelector('[data-id="'+ item.id +'"]');
+        var li = document.querySelector('[data-id="' + item.id + '"]');
         var count = li.querySelector('.menu-count');
 
         // update count in the view
