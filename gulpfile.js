@@ -64,7 +64,7 @@ gulp.task('lint', function () {
 });
 
 
-gulp.task('test', function () {
+gulp.task('unit-test', function () {
     gulp.src('test/*.js')
         .pipe(mocha());
 });
@@ -73,6 +73,7 @@ gulp.task('access', function () {
         .pipe(a11y())
         .pipe(a11y.reporter());
 });
+gulp.task('test', ['lint','unit-test', 'access']);
 
 
 gulp.task('scripts', function () {
